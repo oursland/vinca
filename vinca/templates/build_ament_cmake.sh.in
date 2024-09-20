@@ -56,7 +56,7 @@ cmake \
     -DCMAKE_PREFIX_PATH=$PREFIX \
     -DAMENT_PREFIX_PATH=$PREFIX \
     -DCMAKE_INSTALL_LIBDIR=lib \
-    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_BUILD_TYPE=Debug \
     -DPYTHON_EXECUTABLE=$PYTHON_EXECUTABLE \
     -DPython_EXECUTABLE=$PYTHON_EXECUTABLE \
     -DPython3_EXECUTABLE=$PYTHON_EXECUTABLE \
@@ -73,4 +73,4 @@ cmake \
     --compile-no-warning-as-error \
     $SRC_DIR/$PKG_NAME/src/work
 
-cmake --build . --config Release --target install
+cmake --build . --config Debug --target install

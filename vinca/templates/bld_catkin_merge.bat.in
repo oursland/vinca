@@ -20,7 +20,7 @@ set CMAKE_PREFIX_PATH=%CMAKE_PREFIX_PATH:\=/%
     --install-space %LIBRARY_PREFIX% ^
     --use-ninja ^
     --install ^
-    -DCMAKE_BUILD_TYPE=Release ^
+    -DCMAKE_BUILD_TYPE=Debug ^
     -DBUILD_SHARED_LIBS=ON ^
     -DPYTHON_EXECUTABLE=%PYTHON% ^
     -DCATKIN_SKIP_TESTING=ON

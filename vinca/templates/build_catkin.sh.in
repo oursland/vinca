@@ -68,7 +68,7 @@ export SKIP_TESTING=@(skip_testing)
 cmake ${CMAKE_ARGS} --compile-no-warning-as-error \
          -DCMAKE_INSTALL_PREFIX=$PREFIX \
          -DCMAKE_PREFIX_PATH=$PREFIX \
-         -DCMAKE_BUILD_TYPE=Release \
+         -DCMAKE_BUILD_TYPE=Debug \
          -DCMAKE_INSTALL_LIBDIR=lib \
          -DCMAKE_NO_SYSTEM_FROM_IMPORTED=ON \
          -DCMAKE_FIND_FRAMEWORK=LAST \
@@ -86,13 +86,13 @@ cmake ${CMAKE_ARGS} --compile-no-warning-as-error \
          -G "Ninja" \
          $SRC_DIR/$PKG_NAME/src/work
 
-cmake --build . --config Release --target all
+cmake --build . --config Debug --target all
 
 if [[ "$SKIP_TESTING" == "OFF" ]]; then
-    cmake --build . --config Release --target run_tests
+    cmake --build . --config Debug --target run_tests
 fi
 
-cmake --build . --config Release --target install
+cmake --build . --config Debug --target install
 
 if [ "${PKG_NAME}" == "ros-@(ros_distro)-catkin" ]; then
     # Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d.
